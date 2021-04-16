@@ -13,4 +13,9 @@
 - Add all untracked files: `git add .`
 - Commit changes: `git commit`
 - Add your branch to github: `git push --set-upstream origin your-branch-name`
-- Push changes of current branch to github: `git push`
+- Push changes of current branch to github: `git push origin your-branch-name`
+- Pull up to date changes of current branch from GitHub: `git pull origin your-branch-name`
+
+## Notes
+- Be sure to push any changes you make to your own branch only.
+- If you'd like to merge your changes with the main branch, please submit a pull request to someone through GitHub.
