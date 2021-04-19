@@ -9,19 +9,18 @@ import { SportsService } from 'src/app/services/sports.service';
 })
 export class SportsComponent implements OnInit {
 
-  sportsNewsList : ISports[] = [ // DUMMY DATA. REPLACE WITH CALL FROM API EITHER HERE OR IN A SERVICE
+  constructor(private sports : SportsService) { }
+
+
+  //sportsNewsList : ISports[] = []
+  
+  
+  sportsNewsList : ISports[] = [ // DUMMY DATA. REPLACE WITH CALL FROM API 
     {
       title : "Packers win Super Bowl LXV!",
       description : "The Green Bay Packers take home the championship",
       url : "/packers-win-super-bowl-lxv",
-      img : "",
-      publishedAt : "ESPN"
-    },
-    {
-      title : "Packers win Super Bowl LXV!",
-      description : "The Green Bay Packers take home the championship",
-      url : "/packers-win-super-bowl-lxv",
-      img : "",
+      img : "../../../assets/images/sports/football.jpeg",
       publishedAt : "ESPN"
     },
     {
@@ -44,12 +43,26 @@ export class SportsComponent implements OnInit {
       url : "/minnesota-vikings-struggle-as-usual",
       img : "",
       publishedAt : "ESPN"
+    },
+    {
+      title : "Minnesota Vikings struggle as usual",
+      description : "The Minnesota Vikings seem to struggle with knowing the difference between left and right",
+      url : "/minnesota-vikings-struggle-as-usual",
+      img : "",
+      publishedAt : "ESPN"
+    },
+    {
+      title : "Minnesota Vikings struggle as usual",
+      description : "The Minnesota Vikings seem to struggle with knowing the difference between left and right",
+      url : "/minnesota-vikings-struggle-as-usual",
+      img : "",
+      publishedAt : "ESPN"
     }
   ]
 
-  constructor(private sports : SportsService) { }
 
   ngOnInit(): void {
+    
   }
 
 }
