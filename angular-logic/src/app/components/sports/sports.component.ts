@@ -18,6 +18,27 @@ export class SportsComponent implements OnInit {
       publishedAt : "ESPN"
     },
     {
+      title : "Packers win Super Bowl LXV!",
+      description : "The Green Bay Packers take home the championship",
+      url : "/packers-win-super-bowl-lxv",
+      img : "",
+      publishedAt : "ESPN"
+    },
+    {
+      title : "Packers win Super Bowl LXV!",
+      description : "The Green Bay Packers take home the championship",
+      url : "/packers-win-super-bowl-lxv",
+      img : "",
+      publishedAt : "ESPN"
+    },
+    {
+      title : "Packers win Super Bowl LXV!",
+      description : "The Green Bay Packers take home the championship",
+      url : "/packers-win-super-bowl-lxv",
+      img : "",
+      publishedAt : "ESPN"
+    },
+    {
       title : "Minnesota Vikings struggle as usual",
       description : "The Minnesota Vikings seem to struggle with knowing the difference between left and right",
       url : "/minnesota-vikings-struggle-as-usual",
