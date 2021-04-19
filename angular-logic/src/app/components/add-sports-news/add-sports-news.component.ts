@@ -25,8 +25,8 @@ export class AddSportsNewsComponent implements OnInit {
 
   addSportsNews(){
     console.log(this.newSportsNews)
-    // TODO: Add sports news data to mongodb
-    // this.sports.addSportsNews(this.newSportsNews) // Send data to service which will call the api to update mongodb. Ready for mongodb.
+    //Add sports news data to mongodb
+    this.sports.addSportsNews(this.newSportsNews) // Send data to service which will call the api to update mongodb. Ready for mongodb.
   }
 
   resetForm(){

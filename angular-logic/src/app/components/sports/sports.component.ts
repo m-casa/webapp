@@ -11,14 +11,15 @@ export class SportsComponent implements OnInit {
 
   constructor(private sports : SportsService) { }
 
-  // sportsNewsList : ISports[] = this.sports.getSportsNews() // Get sportsNews data from mongodb. Ready for mongodb implementation
-  
-  
+  sportsNewsList = this.sports.getSportsNews() // Get sportsNews data from mongodb. Ready for mongodb implementation
+  // Console.log is in ngOnInit()
+
+  /*
   sportsNewsList : ISports[] = [ // DUMMY DATA. REPLACE WITH CALL FROM API 
     {
       title : "Green Bay Packers win Super Bowl!",
       description : "The Green Bay Packers take home the championship",
-      url : "/packers-win-super-bowl-lxv",
+      url : "/packers-win-super-bowl",
       img : "../../../assets/images/sports/football.jpeg",
       publishedAt : "ESPN"
     },
@@ -60,9 +61,9 @@ export class SportsComponent implements OnInit {
     }
   ]
 
-
+  */
   ngOnInit(): void {
-    
+    console.log(this.sportsNewsList)
   }
 
 }
