@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LocationService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getLocation(): Promise<any>
   {
@@ -21,4 +22,17 @@ export class LocationService {
     });
 
   }
+
+
+  weatherUpdate(lat, lon){
+
+    return this.http.get("http://localhost:3000/weather?lat=" + lat + "&lon=" + lon).subscribe((response: any) =>{
+      console.log(response);
+      
+      return response
+    })
+    
+  }
+
+
 }
