@@ -9,7 +9,19 @@ app.use(express.urlencoded({
 }));
 app.use(cors());
 
+const axios = require("axios").default;
 
+//Weather Api call
+app.get("/weather", async (req, res)=>{
+    try {
+        console.log(req.query)
+        
+    } catch (error) {
+        console.log(error);
+    }
+    
+
+})
 
 app.listen(3000, () => {
     console.log("Application Started Successfully.")
