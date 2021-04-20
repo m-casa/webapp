@@ -1,27 +1,27 @@
-<!-- Default form contact -->
-<form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-    <p class="h4 mb-4">Contact us</p>
+<header></header>
+<div class ="container">
+  <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+      <h1 style="font-family:Verdana,sans-serif;">Contact us</h1><br>
   
     <!-- Name -->
-    <input type="text" formControlName="name" id="defaultContactFormName" mdbInput
-      class="form-control mb-4" placeholder="Name">
+    <input type="text" formControlName="name" id="name" placeholder="Name" style="font-size:150%;"><br><br>
   
+
     <!-- Email -->
-    <input type="email" formControlName="email" id="defaultContactFormEmail" mdbInput
-      class="form-control mb-4" placeholder="E-mail">
+    <input type="email" formControlName="email" id="name" placeholder="E-mail" style="font-size:150%;"><br><br>
   
   
     <!-- Query -->
     <div class="form-group">
-      <textarea formControlName="query" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
-        rows="3" placeholder="Query"></textarea>
-    </div>
+      <textarea formControlName="query" rows="6" placeholder="Query" style="font-size:150%;"></textarea>
+    </div><br><br>
   
   
     <!-- Submit button -->
-    <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-      mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Submit</button>
-  
+    <button  type="submit" [disabled]="disabledSubmitButton" style="font-size:150%;">Submit</button>
   </form>
+</div>
 
+<footer></footer>

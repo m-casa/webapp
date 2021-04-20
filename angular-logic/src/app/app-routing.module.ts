@@ -17,6 +17,14 @@ const routes: Routes = [
     component: ListNewsComponent
   },
   {
+    path: 'contact',
+  component: ContactComponent
+  },
+  {
+    path: 'about',
+  component: AboutComponent
+  },
+  {
     path: 'weather',
     component: WeatherComponent
   },
