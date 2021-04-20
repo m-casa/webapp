@@ -9,6 +9,9 @@ import { SportsComponent } from './components/sports/sports.component';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,15 @@ import { ListNewsComponent } from './components/news/list-news/list-news.compone
     SportsComponent,
     AddSportsNewsComponent,
     AddNewsComponent,
-    ListNewsComponent
+    ListNewsComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
