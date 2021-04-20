@@ -54,7 +54,7 @@ app.get("/weather", async (req, res)=>{
 })
 
 //Sports Api Calls
-const SportsModel = require("./schemas/sports.model")
+const SportsModel = require("./models/sports.model")
 // Get Data
 app.get("/get-sports-news", async (req, res)=>{
     try {
