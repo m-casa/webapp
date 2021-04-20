@@ -10,25 +10,31 @@
 					<div class="card-header">Chat</div>
 					<div class="card-body height3">
 						<ul class="chat-list">
-							<li class="in">
+							<li [ngClass]="{ message.self ? 'in': 'out' }">
 								<div class="chat-body">
 									<div class="chat-message">
-										<h5>Jon Snow</h5>
-										<p>Winter is Coming</p>
+										<!-- <h5>Jon Snow</h5> -->
+										<p *ngFor="let message of messages">{{message.message}}</p>
 									</div>
 								</div>
 							</li>
-							<li class="out">
+<!-- 							<li class="out">
 								<div class="chat-body">
 									<div class="chat-message">
 										<h5>Daenerys</h5>
 										<p>I can change that</p>
 									</div>
 								</div>
-							</li>
+							</li> -->
 						</ul>
-						<textarea placeholder="message"></textarea> <br>
-						<button>Send</button>
+						<p *ngIf="loggedInUserName === ''">
+							<!-- need to change logic to confirm if user is logged in -->
+							<button (click)="loginUser()">Login</button>
+						</p>
+						<p *ngIf="loggedInUserName !== ''">
+							<textarea [(ngModel)]="message" placeholder="message"></textarea>
+							<button (click)="sendMessage()">Send</button>
+						</p>
 					</div>
 				</div>
 			</div>

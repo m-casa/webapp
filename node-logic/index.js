@@ -1,6 +1,8 @@
 require("./db");
 const express = require("express");
 const cors = require("cors");
+const socketio = require("socket.io")
+const http = require("http");
 const app = express();
 const NewsModel = require("./models/news.model");
 
@@ -102,6 +104,28 @@ app.post("/save-sports-news", (req, res)=>{
         res.status(500)
     }
 })
+
+//Chat
+const connections = {};
+const server = http.createServer(app);
+const io = socketio(server, {
+    cors : {
+        origin : "*"
+    }
+});
+
+io.on("connection", (client)=>{
+
+    client.on("login", (username)=>{
+        connections[username] = client;
+    });
+
+    client.on("chat", (data)=>{
+        const { message, user } = data;
+        connections[user].emit("message", message)
+    })
+
+});
 
 app.listen(3000, () => {
     console.log("Application Started Successfully.")

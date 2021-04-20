@@ -6,6 +6,7 @@ import { ListNewsComponent } from './components/news/list-news/list-news.compone
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { SportsComponent } from './components/sports/sports.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "add-sports-news",
     component: AddSportsNewsComponent
+  },
+  {
+    path: "chat",
+    component: ChatComponent
   },
   {
     path: "**",
