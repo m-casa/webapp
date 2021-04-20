@@ -9,7 +9,8 @@ import { SportsComponent } from './components/sports/sports.component';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     SportsComponent,
     AddSportsNewsComponent,
     AddNewsComponent,
-    ListNewsComponent
+    ListNewsComponent,
+    ImageSliderComponent
   ],
   imports: [
     BrowserModule,
