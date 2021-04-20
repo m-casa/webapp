@@ -1,4 +1,4 @@
-<form>
+<form #newSportsForm="ngForm">
     <div class="container">
         <div class="row mt-1">
             <div class="col-2"></div>
@@ -8,26 +8,47 @@
                 </div>
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" required class="form-control" placeholder="Enter title" [(ngModel)]="newSportsNews.title" #sportsTitle="ngModel" name="sportsTitle">
+                    <input type="text" required class="form-control" placeholder="Enter title"
+                        [(ngModel)]="newSportsNews.title" #sportsTitle="ngModel" name="sportsTitle">
+                    <div *ngIf="sportsTitle.errors && sportsTitle.touched">
+                        <p *ngIf="sportsTitle.errors.required">Title is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input type="text" class="form-control" placeholder="Enter description" [(ngModel)]="newSportsNews.description" #sportsDescription="ngModel" name="sportsDescription">
+                    <input type="text" required class="form-control" placeholder="Enter description"
+                        [(ngModel)]="newSportsNews.description" #sportsDescription="ngModel" name="sportsDescription">
+                    <div *ngIf="sportsDescription.errors && sportsDescription.touched">
+                        <p *ngIf="sportsDescription.errors.required">Description is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>URL</label>
-                    <input type="text" class="form-control" placeholder="Enter URL" [(ngModel)]="newSportsNews.url" #sportsUrl="ngModel" name="sportsUrl">
+                    <input type="text" required class="form-control" placeholder="Enter URL"
+                        [(ngModel)]="newSportsNews.url" #sportsUrl="ngModel" name="sportsUrl">
+                    <div *ngIf="sportsUrl.errors && sportsUrl.touched">
+                        <p *ngIf="sportsUrl.errors.required">Url is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>URL to Image</label>
-                    <input type="text" class="form-control" placeholder="Enter URL to image" [(ngModel)]="newSportsNews.img" #sportsImg="ngModel" name="sportsImg">
+                    <label>Image</label>
+                    <input type="text" required class="form-control" placeholder="Enter image name (ex: image.jpeg)"
+                        [(ngModel)]="newSportsNews.img" #sportsImg="ngModel" name="sportsImg">
+                    <div *ngIf="sportsImg.errors && sportsImg.touched">
+                        <p *ngIf="sportsImg.errors.required">Image name is required</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Published At</label>
-                    <input type="text" class="form-control" placeholder="Enter publish location" [(ngModel)]="newSportsNews.publishedAt" #sportsPublishedAt="ngModel" name="sportsPublishedAt">
+                    <input type="text" required class="form-control" placeholder="Enter publish location"
+                        [(ngModel)]="newSportsNews.publishedAt" #sportsPublishedAt="ngModel" name="sportsPublishedAt">
+                    <div *ngIf="sportsPublishedAt.errors && sportsPublishedAt.touched">
+                        <p *ngIf="sportsPublishedAt.errors.required">Publish date is required</p>
+                    </div>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary mr-1" (click)="addSportsNews()">Add</button>
+                    <button [disabled]="newSportsForm.status === 'INVALID'" type="submit" class="btn btn-primary mr-1"
+                        (click)="addSportsNews()">Add</button>
                     <button type="submit" class="btn btn-warning" (click)="resetForm()">Reset</button>
                 </div>
             </div>
