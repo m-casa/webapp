@@ -12,6 +12,7 @@ import { ListNewsComponent } from './components/news/list-news/list-news.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactComponent } from './components/contact/contact.component';
     AddNewsComponent,
     ListNewsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

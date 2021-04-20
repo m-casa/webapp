@@ -2,6 +2,7 @@ require("./db");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const NewsModel = require("./models/news.model");
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -9,7 +10,24 @@ app.use(express.urlencoded({
 }));
 app.use(cors());
 
-const axios = require("axios").default;
+app.get("/list-news", async (req, res) => {
+    try {
+        const news = await NewsModel.find();
+        res.json({ list: news });
+    } catch (error) {
+        res.status(500);
+    }
+});
+
+app.post("/add-news", async (req, res) => {
+    try {
+        const { body } = req;
+        const news = new NewsModel(body)
+        const response = await news.save();
+    } catch {
+        res.status(500);
+    }
+});
 
 const nodeGeocoder = require('node-geocoder');
 const { ReplSet } = require("mongodb");
@@ -19,8 +37,9 @@ const options = {
 const geoCoder = nodeGeocoder(options);
 
 //Weather Api call
-app.get("/weather", async (req, res)=>{
+app.get("/weather", async (req, res) => {
     try {
+        console.log(req.query)
         const par = req.query;
         var final = {}
         //Geo-coder Block
@@ -49,9 +68,7 @@ app.get("/weather", async (req, res)=>{
     } catch (error) {
         console.log(error);
     }
-    
-
-})
+});
 
 //Sports Api Calls
 const SportsModel = require("./models/sports.model")
