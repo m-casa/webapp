@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label>Published At</label>
-                    <input type="text" required class="form-control" placeholder="Enter publish location"
+                    <input type="text" required class="form-control" placeholder="Enter publish date"
                         [(ngModel)]="newSportsNews.publishedAt" #sportsPublishedAt="ngModel" name="sportsPublishedAt">
                     <div *ngIf="sportsPublishedAt.errors && sportsPublishedAt.touched">
                         <p *ngIf="sportsPublishedAt.errors.required">Publish date is required</p>
