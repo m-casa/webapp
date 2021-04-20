@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
+import { WeatherComponent } from './components/weather/weather.component';
 import { SportsComponent } from './components/sports/sports.component';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "list-news",
     component: ListNewsComponent
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent
   },
   {
     path: "sports-news",
