@@ -12,6 +12,7 @@ import { AddNewsComponent } from './components/news/add-news/add-news.component'
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
 import { ContactComponent } from './components/contact/contact.component'
 import { AboutComponent } from './components/about/about.component'
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { AboutComponent } from './components/about/about.component'
     AddSportsNewsComponent,
     AddNewsComponent,
     ListNewsComponent,
+    AboutComponent,
     ContactComponent,
-    AboutComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
