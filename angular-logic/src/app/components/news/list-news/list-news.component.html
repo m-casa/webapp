@@ -29,10 +29,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Test</th>
-                        <td>This is a test.</td>
-                        <td>TCS</td>
+                    <tr *ngFor="let news of list">
+                        <th scope="row">{{news.title}}</th>
+                        <td>{{news.description}}</td>
+                        <td>{{news.published}}</td>
                         <td>
                             <button type="submit" class="btn btn-warning mr-1">Edit</button>
                             <button type="submit" class="btn btn-danger">Delete</button>
