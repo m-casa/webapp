@@ -1,0 +1,27 @@
+
+<header></header>
+<div class ="container">
+  <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+      <h1 style="font-family:Verdana,sans-serif;">Contact us</h1><br>
+  
+    <!-- Name -->
+    <input type="text" formControlName="name" id="name" placeholder="Name" style="font-size:150%;"><br><br>
+  
+
+    <!-- Email -->
+    <input type="email" formControlName="email" id="name" placeholder="E-mail" style="font-size:150%;"><br><br>
+  
+  
+    <!-- Query -->
+    <div class="form-group">
+      <textarea formControlName="query" rows="6" placeholder="Query" style="font-size:150%;"></textarea>
+    </div><br><br>
+  
+  
+    <!-- Submit button -->
+    <button  type="submit" [disabled]="disabledSubmitButton" style="font-size:150%;">Submit</button>
+  </form>
+</div>
+
+<footer></footer>

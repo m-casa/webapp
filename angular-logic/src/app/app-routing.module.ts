@@ -4,6 +4,8 @@ import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { WeatherComponent } from './components/weather/weather.component';
 import { SportsComponent } from './components/sports/sports.component';
 
 const routes: Routes = [
@@ -16,6 +18,18 @@ const routes: Routes = [
     component: ListNewsComponent
   },
   {
+    path: 'contact',
+  component: ContactComponent
+  },
+  {
+    path: 'about',
+  component: AboutComponent
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent
+  },
+  {
     path: "sports-news",
     component: SportsComponent
   },
@@ -26,6 +40,10 @@ const routes: Routes = [
   {
     path: "slider",
     component: ImageSliderComponent
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ];
 

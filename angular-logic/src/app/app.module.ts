@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,10 @@ import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ImageSliderComponent } from './components/image-slider/image-slider.component'
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +24,17 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     AddSportsNewsComponent,
     AddNewsComponent,
     ListNewsComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    AboutComponent,
+    ContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
