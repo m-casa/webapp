@@ -126,6 +126,29 @@ app.get("/weather", async (req, res) => {
     }
 });
 
+//Save Contact Data
+
+const ContactModel = require("./models/contact.model")
+
+app.post("/contact", async (req, res) => {
+    try {
+        const { body } = req;
+        const newContact = new ContactModel(body)
+        newContact
+            .save()
+            .then(()=>{
+                console.log("Your query has been submitted")
+                res.send("")
+            })
+            .catch((error)=>{
+                console.error(error)
+            })
+    } catch {
+        console.error(error)
+        res.status(500);
+    }
+});
+
 app.listen(3000, () => {
     console.log("Application Started Successfully.")
 });
