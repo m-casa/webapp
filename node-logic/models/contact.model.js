@@ -7,6 +7,6 @@ const ContactSchema = new Schema({
     "query" : String,
 })
 
-const Model = mongoose.model("contact", SportsSchema, "contact")
+const Model = mongoose.model("contact", ContactSchema, "contact")
 
 module.exports = Model;
