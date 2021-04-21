@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 const app = express();
+const axios = require('axios').default;
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -96,7 +97,6 @@ const geoCoder = nodeGeocoder(options);
 
 app.get("/weather", async (req, res) => {
     try {
-        console.log(req.query)
         const par = req.query;
         var final = {}
         //Geo-coder Block
@@ -124,6 +124,29 @@ app.get("/weather", async (req, res) => {
         // express catch block
     } catch (error) {
         console.log(error);
+    }
+});
+
+//Save Contact Data
+
+const ContactModel = require("./models/contact.model")
+
+app.post("/contact", async (req, res) => {
+    try {
+        const { body } = req;
+        const newContact = new ContactModel(body)
+        newContact
+            .save()
+            .then(()=>{
+                console.log("Your query has been submitted")
+                res.send("")
+            })
+            .catch((error)=>{
+                console.error(error)
+            })
+    } catch {
+        console.error(error)
+        res.status(500);
     }
 });
 
