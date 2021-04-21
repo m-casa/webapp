@@ -10,8 +10,13 @@ import { SportsComponent } from './components/sports/sports.component';
 import { ContactComponent } from './components/contact/contact.component'
 import { AboutComponent } from './components/about/about.component'
 import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    component: HomePageComponent
+  },
   {
     path: "add-news",
     component: AddNewsComponent

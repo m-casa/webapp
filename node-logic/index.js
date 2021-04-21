@@ -2,6 +2,7 @@ require("./db");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const axios = require('axios').default;
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -95,7 +96,6 @@ const geoCoder = nodeGeocoder(options);
 
 app.get("/weather", async (req, res) => {
     try {
-        console.log(req.query)
         const par = req.query;
         var final = {}
         //Geo-coder Block
