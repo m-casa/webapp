@@ -12,7 +12,7 @@
   
 
     <!-- Email -->
-    <input type="email" required class ="form-control" name="contactEmail" placeholder="Email" [(ngModel)]="contactForm.email" #contactEmail="ngModel" style="font-size:150%;"><br>
+    <input type="text" required email class ="form-control" name="contactEmail" placeholder="Email" [(ngModel)]="contactForm.email" #contactEmail="ngModel" style="font-size:150%;"><br>
     <div *ngIf="contactEmail.errors && contactEmail.touched">
       <p *ngIf="contactEmail.errors.required" style="font-family:Verdana,sans-serif;">Valid email is required</p>
     </div>
