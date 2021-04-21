@@ -8,12 +8,12 @@
                 <div class="col-4"></div>
                 <div class="col-3"></div>
                 <div class="col-5">
-                    <form>
+                    <form #searchForm="ngForm">
                         <div class="input-group">
                             <input type="search" class="form-control bg-light" placeholder="Search for News"
-                                name="searchCriteria">
+                                [(ngModel)]="search.criteria" name="searchCriteria" #searchCriteria="ngModel">
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-primary">Search</button>
+                                <button type="submit" class="btn btn-primary" (click)="searchFor()">Search</button>
                             </div>
                         </div>
                     </form>
@@ -32,10 +32,10 @@
                     <tr *ngFor="let news of list">
                         <th scope="row">{{news.title}}</th>
                         <td>{{news.description}}</td>
-                        <td>{{news.published}}</td>
+                        <td>{{news.publishedAt}}</td>
                         <td>
-                            <button type="submit" class="btn btn-warning mr-1">Edit</button>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-warning mr-1" (click)="editNews(news)">Edit</button>
+                            <button type="submit" class="btn btn-danger" (click)="deleteNews(news)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
