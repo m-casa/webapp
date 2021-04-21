@@ -1,9 +1,8 @@
 require("./db");
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
+const axios = require("axios").default;
 const app = express();
-const axios = require('axios').default;
 
 app.use(express.json());
 app.use(express.urlencoded({
