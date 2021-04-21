@@ -15,6 +15,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { EditNewsComponent } from './components/news/edit-news/edit-news.compone
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
-    EditNewsComponent
+    EditNewsComponent,
+    HomePageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
