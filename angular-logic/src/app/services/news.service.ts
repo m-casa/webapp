@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class NewsService {
+  selectedNews: any;
 
   constructor(private http: HttpClient) { }
 
@@ -15,5 +16,18 @@ export class NewsService {
 
   listNews() {
     return this.http.get('http://localhost:3000/list-news');
+  }
+
+  editNews(news) {
+    this.selectedNews = news;
+  }
+
+  updateNews(news) {
+    return this.http.post('http://localhost:3000/update-news', news);
+  }
+
+  deleteNews(news) {
+    console.log(news)
+    return this.http.post('http://localhost:3000/delete-news', news);
   }
 }
