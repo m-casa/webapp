@@ -9,6 +9,14 @@ import { SportsComponent } from './components/sports/sports.component';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+
+
+import {ValidateService} from './services/validate.service';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+
+
 
 @NgModule({
   declarations: [
@@ -17,14 +25,18 @@ import { ListNewsComponent } from './components/news/list-news/list-news.compone
     SportsComponent,
     AddSportsNewsComponent,
     AddNewsComponent,
-    ListNewsComponent
+    ListNewsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
