@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const NewsSchema = new Schema({
+    "newsType": String,
     "title": String,
     "description": String,
     "url": String,
-    "image": String,
-    "published": String
+    "img": String,
+    "publishedAt": String //May need to change to Date type later?
 });
 
 const Model = mongoose.model("news", NewsSchema, "news");
