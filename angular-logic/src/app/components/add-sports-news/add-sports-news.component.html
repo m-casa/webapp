@@ -1,4 +1,4 @@
-<form #newSportsForm="ngForm">
+<form #newSportsForm="ngForm" id="sportForm" style="background-color: white; margin-left: 30%; margin-right: 30%;">
     <div class="container">
         <div class="row mt-1">
             <div class="col-2"></div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label>Published At</label>
-                    <input type="text" required class="form-control" placeholder="Enter publish location"
+                    <input type="text" required class="form-control" placeholder="Enter publish date"
                         [(ngModel)]="newSportsNews.publishedAt" #sportsPublishedAt="ngModel" name="sportsPublishedAt">
                     <div *ngIf="sportsPublishedAt.errors && sportsPublishedAt.touched">
                         <p *ngIf="sportsPublishedAt.errors.required">Publish date is required</p>
@@ -49,7 +49,7 @@
                 <div>
                     <button [disabled]="newSportsForm.status === 'INVALID'" type="submit" class="btn btn-primary mr-1"
                         (click)="addSportsNews()">Add</button>
-                    <button type="submit" class="btn btn-warning" (click)="resetForm()">Reset</button>
+                    <button type="submit" class="btn btn-warning" (click)="resetForm()">Reset</button> <br/> <br>
                 </div>
             </div>
             <div class="col-2"></div>
