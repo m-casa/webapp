@@ -10,8 +10,10 @@ import { SportsComponent } from './components/sports/sports.component';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
-import { ContactComponent } from './components/contact/contact.component'
-import { AboutComponent } from './components/about/about.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -22,6 +24,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AddSportsNewsComponent,
     AddNewsComponent,
     ListNewsComponent,
+    ImageSliderComponent,
     AboutComponent,
     ContactComponent,
     NotFoundComponent
