@@ -10,6 +10,10 @@ import { SportsComponent } from './components/sports/sports.component';
 import { AddSportsNewsComponent } from './components/add-sports-news/add-sports-news.component';
 import { AddNewsComponent } from './components/news/add-news/add-news.component';
 import { ListNewsComponent } from './components/news/list-news/list-news.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
@@ -26,6 +30,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AddSportsNewsComponent,
     AddNewsComponent,
     ListNewsComponent,
+    LoginComponent,
+    RegisterComponent,
     ImageSliderComponent,
     AboutComponent,
     ContactComponent,
@@ -38,10 +44,12 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
