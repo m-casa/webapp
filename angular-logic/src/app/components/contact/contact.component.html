@@ -1,27 +1,33 @@
-<!-- Default form contact -->
-<form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<header></header>
+<div class ="container">
+  <form #contactForm="ngForm" id="contactForm" class="text-center border border-light p-5"  method="POST" (ngSubmit)="onSubmit()">
 
-    <p class="h4 mb-4">Contact us</p>
+      <h1 style="font-family:Verdana,sans-serif;">Contact us</h1><br>
   
     <!-- Name -->
-    <input type="text" formControlName="name" id="defaultContactFormName" mdbInput
-      class="form-control mb-4" placeholder="Name">
+    <input type="text" required class ="form-control" name="contactName" placeholder="Name" [(ngModel)]="contactForm.name" #contactName="ngModel" style="font-size:150%;"><br>
+    <div *ngIf="contactName.errors && contactName.touched">
+      <p *ngIf="contactName.errors.required" style="font-family:Verdana,sans-serif;">Name is required</p>
+    </div>
   
+
     <!-- Email -->
-    <input type="email" formControlName="email" id="defaultContactFormEmail" mdbInput
-      class="form-control mb-4" placeholder="E-mail">
-  
+    <input type="email" required class ="form-control" name="contactEmail" placeholder="Email" [(ngModel)]="contactForm.email" #contactEmail="ngModel" style="font-size:150%;"><br>
+    <div *ngIf="contactEmail.errors && contactEmail.touched">
+      <p *ngIf="contactEmail.errors.required" style="font-family:Verdana,sans-serif;">Valid email is required</p>
+    </div>
   
     <!-- Query -->
-    <div class="form-group">
-      <textarea formControlName="query" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
-        rows="3" placeholder="Query"></textarea>
+    <textarea required class ="form-control" name="contactQuery" placeholder="Query" [(ngModel)]="contactForm.query" #contactQuery="ngModel" rows="6"style="font-size:150%;"></textarea>
+    <div *ngIf="contactQuery.errors && contactQuery.touched">
+      <p *ngIf="contactQuery.errors.required" style="font-family:Verdana,sans-serif;">Query is required</p>
     </div>
+    <br>
   
   
     <!-- Submit button -->
-    <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
-      mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Submit</button>
-  
+    <button [disabled]="contactForm.status === 'INVALID'" type="submit" (click)="onSubmit()" class="btn btn-primary mr-1" style="font-size:150%;">Submit</button>
   </form>
+</div>
 
+<footer></footer>

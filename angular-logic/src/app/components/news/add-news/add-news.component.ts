@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class AddNewsComponent implements OnInit {
   news = {
+    newsType: "regular",
     title: "",
     description: "",
     url: "",
-    image: "",
-    published: ""
+    img: "",
+    publishedAt: ""
   };
 
   constructor(private newsService: NewsService, private router: Router) { }

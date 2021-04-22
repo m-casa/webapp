@@ -7,8 +7,28 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { SportsComponent } from './components/sports/sports.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ContactComponent } from './components/contact/contact.component'
+import { AboutComponent } from './components/about/about.component'
+import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    component: HomePageComponent
+  },
+  {
+    path: 'contact',
+  component: ContactComponent
+  },
+  {
+    path: 'about',
+  component: AboutComponent
+  },
+  {
+    path: 'weather',
+    component: WeatherComponent
+  },
   {
     path: "add-news",
     component: AddNewsComponent
@@ -18,8 +38,8 @@ const routes: Routes = [
     component: ListNewsComponent
   },
   {
-    path: 'weather',
-    component: WeatherComponent
+    path: "edit-news",
+    component: EditNewsComponent
   },
   {
     path: "sports-news",

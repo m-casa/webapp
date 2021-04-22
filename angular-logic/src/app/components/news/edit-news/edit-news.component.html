@@ -1,0 +1,41 @@
+<form #newsForm="ngForm" (ngSubmit)="updateNews()">
+    <div class="container">
+        <div class="row mt-1">
+            <div class="col-2"></div>
+            <div class="col-8" *ngIf="news != null">
+                <div>
+                    <h1 class="text-center">Update News</h1>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="news.title"
+                        [(ngModel)]="news.title" name="title" #title="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" placeholder="news.description"
+                        [(ngModel)]="news.description" name="description" #description="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>URL</label>
+                    <input type="text" class="form-control" placeholder="news.url"
+                        [(ngModel)]="news.url" name="url" #url="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>URL to Image</label>
+                    <input type="text" class="form-control" placeholder="news.img"
+                        [(ngModel)]="news.img" name="img" #img="ngModel">
+                </div>
+                <div class="form-group">
+                    <label>Published At</label>
+                    <input type="text" class="form-control" placeholder="news.publishedAt"
+                        [(ngModel)]="news.publishedAt" name="publishedAt" #publishedAt="ngModel">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</form>
