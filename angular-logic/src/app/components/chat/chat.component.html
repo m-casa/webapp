@@ -20,7 +20,6 @@
 							</li>
 
 						</ul>
-						<p> Total Users Logged in - {{users | json}}</p>
 						<p *ngIf="loggedInUserName === ''">
 							<textarea [(ngModel)]="username" placeholder="Choose Nickname"></textarea><br>
 							<button (click)="loginUser()">Set Nickname</button>
