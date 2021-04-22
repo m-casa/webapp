@@ -10,7 +10,7 @@
 					<div class="card-header">Chat</div>
 					<div class="card-body height3">
 						<ul class="chat-list">
-							<li [ngClass]="{ message.self ? 'in': 'out' }">
+							<li [ngClass]=" self: message.self ? 'in' : 'out' ">
 								<div class="chat-body">
 									<div class="chat-message">
 										<!-- <h5>Jon Snow</h5> -->
