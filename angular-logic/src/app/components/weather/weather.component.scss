@@ -15,9 +15,6 @@
 }
 
 .container {
-  //border-radius: 25px;
-  background:linear-gradient( to top right, rgb(79, 99, 216) 0%,
-          rgba(3,155,229 ,1) 40%);
   color: #ffffff;
   height: 170px;
 }
@@ -124,7 +121,7 @@
 .today-info {
   padding: 15px;
   margin: 0 25px 25px 25px;
-/*  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
@@ -173,7 +170,7 @@
   background: #fff;
   color: #222831;
   -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+          box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
 }
 
 .week-list>li.active {
