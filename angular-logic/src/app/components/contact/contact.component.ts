@@ -10,19 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   constructor(private connectionService: ConnectionService) { }
-
-  
-  contactForm:any = {
-    "name": String,
-    "email": String,
-    "query" : String,
+  contactForm = {
+    name: "",
+    email: "",
+    query: ""
   };
 
   ngOnInit(): void{
   }
 
   onSubmit() {
-    console.log("Your query has been sent.")
+    console.log("Your query has been sent.");
     this.connectionService.onSubmit(this.contactForm);
   }
 }

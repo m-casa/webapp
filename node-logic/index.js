@@ -134,7 +134,7 @@ const ContactModel = require("./models/contact.model")
 app.post("/contact", async (req, res) => {
     try {
         const { body } = req;
-        const newContact = new ContactModel(body)
+        const newContact = new ContactModel(body);
         newContact
             .save()
             .then(() => {
