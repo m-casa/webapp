@@ -3,6 +3,7 @@
 </header>
 
 <body>
+	
 	<div class="container content ">
 		<div class="row">
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -19,11 +20,12 @@
 							</li>
 
 						</ul>
-						<p *ngIf="selectedUser === ''">
-							<textarea [(ngModel)]="nickname" placeholder="Choose Nickname"></textarea><br>
+						<p> Total Users Logged in - {{users | json}}</p>
+						<p *ngIf="loggedInUserName === ''">
+							<textarea [(ngModel)]="username" placeholder="Choose Nickname"></textarea><br>
 							<button (click)="loginUser()">Set Nickname</button>
 						</p>
-						<p *ngIf="selectedUser !== ''">
+						<p *ngIf="loggedInUserName !== ''">
 							<textarea [(ngModel)]="message" placeholder="message"></textarea><br>
 							<button (click)="sendMessage()">Send</button>
 						</p>
@@ -33,3 +35,20 @@
 		</div>
 	</div>
 </body>
+<!-- <body>
+
+
+<ul>
+    <li *ngFor="let message of messages">{{message.message}}</li>
+
+</ul>
+
+
+<p *ngIf="loggedInUserName === ''">
+    <input [(ngModel)]="username" placeholder="username" />
+    <button (click)="loginUser()">Login</button>
+</p>
+<p *ngIf="loggedInUserName !== ''">
+    <textarea [(ngModel)]="message" placeholder="message"></textarea><button (click)="sendMessage()">Send</button>
+</p>
+</body> -->

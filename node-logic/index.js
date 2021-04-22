@@ -153,25 +153,51 @@ app.post("/contact", async (req, res) => {
 });
 
 //Chat
-const connections = {};
+
+// const server = http.createServer(app);
+// const io = socketio(server, {
+//     cors : {
+//         origin : "*"
+//     }
+// });
+
+
+// io.on("connection", (client)=>{
+
+//     client.on("login", (data)=>{
+//         connections[data.username] = client;
+
+//     });
+
+//     client.on("chat", (data)=>{
+
+//         // Send to All people who have joined the chat.
+//         client.broadcast.emit("message", data)
+//     })
+
+// })
+/* const connections = {};
 const server = http.createServer(app);
 const io = socketio(server, {
     cors : {
-        origin : "*"
+        origin : "*",
+        transports: ['websocket', 'polling']
     }
-});
+}); */
 
-io.on("connection", (client)=>{
+/* io.on("connection", (client)=>{
 
     client.on("login", (username)=>{
         connections[username] = client;
+        io.emit("totalusers", { total : Object.keys(connections).length, names : Object.keys(connections) })
     });
 
     client.on("chat", (data)=>{
         const { message, user } = data;
-        connections[user].emit("message", {message, user})
+        client.broadcast.emit("message", {message, user})
+        //client.broadcast.emit("message", data)
     })
-})
+}) */
 
 // Registration and Login
 const UserModel = require("./models/users.model");
