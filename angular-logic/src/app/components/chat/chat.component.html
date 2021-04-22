@@ -27,11 +27,11 @@
 								</div>
 							</li> -->
 						</ul>
-						<p *ngIf="loggedInUserName === ''">
-							<!-- need to change logic to confirm if user is logged in -->
-							<button (click)="loginUser()">Login</button>
+						<p *ngIf="selectedUser === ''">
+							<textarea [(ngModel)]="nickname" placeholder="Choose Nickname Here"></textarea>
+							<button (click)="loginUser()">Set Nickname</button>
 						</p>
-						<p *ngIf="loggedInUserName !== ''">
+						<p *ngIf="selectedUser !== ''">
 							<textarea [(ngModel)]="message" placeholder="message"></textarea>
 							<button (click)="sendMessage()">Send</button>
 						</p>

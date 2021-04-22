@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const socketio = require("socket.io")
 const http = require("http");
-const axios = require("axios");
 const app = express();
 const axios = require('axios').default;
 

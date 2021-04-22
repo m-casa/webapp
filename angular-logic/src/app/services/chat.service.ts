@@ -17,9 +17,8 @@ export class ChatService {
     this.socket = io("http://localhost:3000");
   }
 
-  login() {
-    this.router.navigateByUrl("/login");
-    /* this.socket.emit("login", username);  this logic will need to be put into the login page*/
+  login(nickname: string) {
+    this.socket.emit("login", nickname);
   }
 
   

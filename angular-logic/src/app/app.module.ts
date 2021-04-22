@@ -22,6 +22,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
-    ChatComponent
+    ChatComponent,
     EditNewsComponent,
     HomePageComponent,
     FooterComponent

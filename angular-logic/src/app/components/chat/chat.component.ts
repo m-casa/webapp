@@ -12,6 +12,7 @@ export class ChatComponent implements OnInit {
   username : string = "";
   messages : any[] = [];
   selectedUser = "";
+  nickname: string;
 
   constructor(private chat : ChatService) {  }
 
@@ -26,6 +27,7 @@ export class ChatComponent implements OnInit {
   }
 
   loginUser(){
-      this.chat.login();
+    this.selectedUser = this.nickname;
+    this.chat.login(this.selectedUser);
   }
 }
