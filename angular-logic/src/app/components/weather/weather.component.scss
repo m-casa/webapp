@@ -55,12 +55,12 @@
 }
 
 .date-container {
+  display: inline-block;
   position: absolute;
   top: 25px;
   left: 25px;
   width: 50%; 
   height: 100px; 
-  float: left;
 }
 
 .date-dayname {
