@@ -10,29 +10,21 @@
 					<div class="card-header">Chat</div>
 					<div class="card-body height3">
 						<ul class="chat-list">
-							<li [ngClass]=" self: message.self ? 'in' : 'out' ">
+							<li [ngClass]="{'in': message.self, 'out': !message.self}" *ngFor="let message of messages">
 								<div class="chat-body">
 									<div class="chat-message">
-										<!-- <h5>Jon Snow</h5> -->
-										<p *ngFor="let message of messages">{{message.message}}</p>
+										<p>{{message.user + ': ' + message.message}}</p>
 									</div>
 								</div>
 							</li>
-<!-- 							<li class="out">
-								<div class="chat-body">
-									<div class="chat-message">
-										<h5>Daenerys</h5>
-										<p>I can change that</p>
-									</div>
-								</div>
-							</li> -->
+
 						</ul>
 						<p *ngIf="selectedUser === ''">
-							<textarea [(ngModel)]="nickname" placeholder="Choose Nickname Here"></textarea>
+							<textarea [(ngModel)]="nickname" placeholder="Choose Nickname"></textarea><br>
 							<button (click)="loginUser()">Set Nickname</button>
 						</p>
 						<p *ngIf="selectedUser !== ''">
-							<textarea [(ngModel)]="message" placeholder="message"></textarea>
+							<textarea [(ngModel)]="message" placeholder="message"></textarea><br>
 							<button (click)="sendMessage()">Send</button>
 						</p>
 					</div>

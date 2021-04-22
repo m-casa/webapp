@@ -169,9 +169,9 @@ io.on("connection", (client)=>{
 
     client.on("chat", (data)=>{
         const { message, user } = data;
-        connections[user].emit("message", message)
+        connections[user].emit("message", {message, user})
     })
-}
+})
 
 // Registration and Login
 const UserModel = require("./models/users.model");

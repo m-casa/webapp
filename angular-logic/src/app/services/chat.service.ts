@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { io, Socket } from "socket.io-client"
 import { BehaviorSubject } from "rxjs"
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,8 @@ export class ChatService {
   chatMessages: BehaviorSubject<any> = new BehaviorSubject([])
 
 
-  constructor(private router : Router) {
+
+  constructor() {
     // Connect to Socket IO Server
     this.socket = io("http://localhost:3000");
   }
@@ -24,12 +24,12 @@ export class ChatService {
   
   send(message: string, user : string) {
     this.socket.emit("chat", { message, user});
-    this.chatMessages.next([...this.chatMessages.value, { message : message, self : true }])
+    this.chatMessages.next([...this.chatMessages.value, { message : message, self : true, user: user }])
   }
 
   receive() {
-    this.socket.on("message", (message) => {
-      this.chatMessages.next([...this.chatMessages.value, { message : message, self : false, }])
+    this.socket.on("message", ({message, user}) => {
+      this.chatMessages.next([...this.chatMessages.value, { message : message, self : false, user: user }])
     })
   }
 }
