@@ -1,27 +1,78 @@
-<h2 class=”page-header”> Register </h2>
-
-<form (submit)=”onRegisterSubmit( )” >
-
-	<div class=”form-group”>
-		<label> Name </label>
-		<input type=”text” [ (ngModel) ]=”name” name=”name” class=”form-control”>
-    </div>
-
-	<div class=”form-group”>
-		<label> Username </label>
-        <input type=”text” [ (ngModel) ]=”username” name=”username” class=”form-control”>
-    </div>
-
-	<div class=”form-group”>
-		<label> Email </label>
-        <input type=”text” [ (ngModel) ]=”email” name=”email” class=”form-control”>
-    </div>
-
-	<div class=”form-group”>
-		<label> Password </label>
-        <input type=”password” [ (ngModel) ]=”password” name=”password” class=”form-control”>
-    </div>
-
-	<input type=”submit” class=”btn btn-primary” value=”Submit”>
-
-</form>
+<body>
+	<div class="container">
+		<div class="row mb-3"></div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-6">
+				<div class="card bg-light">
+					<div class="card-header">
+						<h1>Register</h1>
+					</div>
+					<div class="card-body">
+						<form #registerForm="ngForm" (ngSubmit)="registerForm.valid && register()" [mustMatch]="['password', 'confirmPassword']" novalidate>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" placeholder="Name"
+										[(ngModel)]="user.name" name="name" #name="ngModel"
+										[ngClass]="{ 'is-invalid': registerForm.submitted && name.invalid }" required>
+                                    <div *ngIf="registerForm.submitted && name.invalid" class="text-danger">
+                                        <div *ngIf="name.errors.required">Full name is required.</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" placeholder="Email"
+										[(ngModel)]="user.email" name="email" #email="ngModel"
+										[ngClass]="{ 'is-invalid': registerForm.submitted && email.invalid }" required email>
+                                    <div *ngIf="registerForm.submitted && email.invalid" class="text-danger">
+                                        <div *ngIf="email.errors.required">Email is required.</div>
+                                        <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" placeholder="Username"
+										[(ngModel)]="user.username" name="username" #username="ngModel"
+										[ngClass]="{ 'is-invalid': registerForm.submitted && username.invalid }" required>
+                                    <div *ngIf="registerForm.submitted && username.invalid" class="text-danger">
+                                        <div *ngIf="username.errors.required">Username is required.</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" placeholder="Password"
+										[(ngModel)]="user.password" name="password" #password="ngModel"
+										[ngClass]="{ 'is-invalid': registerForm.submitted && password.invalid }" required minlength="6">
+                                    <div *ngIf="registerForm.submitted && password.invalid" class="text-danger">
+                                        <div *ngIf="password.errors.required">Password is required.</div>
+                                        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" placeholder="Confirm Password"
+										[(ngModel)]="confirm.password" name="confirmPassword" #confirmPassword="ngModel"
+										[ngClass]="{ 'is-invalid': registerForm.submitted && confirmPassword.invalid }" required>
+                                    <div *ngIf="registerForm.submitted && confirmPassword.invalid" class="text-danger">
+                                        <div *ngIf="confirmPassword.errors.required">Please confirm password.</div>
+                                        <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
+                                    </div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-8">
+									<button type="submit" class="btn btn-primary">Register</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</body>
