@@ -1,6 +1,6 @@
 <header></header>
 <div class ="container">
-  <form #contactForm="ngForm" id="contactForm" class="text-center border border-light p-5"  method="POST" (ngSubmit)="onSubmit()">
+  <form #contactForm2="ngForm" id="contactForm" class="text-center border border-light p-5"  method="POST" (ngSubmit)="onSubmit()">
 
       <h1 style="font-family:Verdana,sans-serif;">Contact us</h1><br>
   
@@ -12,7 +12,7 @@
   
 
     <!-- Email -->
-    <input type="email" required class ="form-control" name="contactEmail" placeholder="Email" [(ngModel)]="contactForm.email" #contactEmail="ngModel" style="font-size:150%;"><br>
+    <input type="text" required email class ="form-control" name="contactEmail" placeholder="Email" [(ngModel)]="contactForm.email" #contactEmail="ngModel" style="font-size:150%;"><br>
     <div *ngIf="contactEmail.errors && contactEmail.touched">
       <p *ngIf="contactEmail.errors.required" style="font-family:Verdana,sans-serif;">Valid email is required</p>
     </div>
@@ -26,7 +26,7 @@
   
   
     <!-- Submit button -->
-    <button [disabled]="contactForm.status === 'INVALID'" type="submit" (click)="onSubmit()" class="btn btn-primary mr-1" style="font-size:150%;">Submit</button>
+    <button [disabled]="contactForm2.status === 'INVALID'" type="submit" (click)="onSubmit()" class="btn btn-primary mr-1" style="font-size:150%;">Submit</button>
   </form>
 </div>
 
