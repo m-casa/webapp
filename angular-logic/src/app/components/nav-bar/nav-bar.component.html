@@ -31,6 +31,9 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a *ngIf="!loggedIn" class="dropdown-item" routerLink="/register">Register</a>
                     <a *ngIf="!loggedIn" class="dropdown-item" routerLink="/login">Log In</a>
+                    <a *ngIf="loggedIn" class="dropdown-item" routerLink="/list-news">News List</a>
+                    <a *ngIf="loggedIn" class="dropdown-item" routerLink="/add-news">Add News</a>
+                    <a *ngIf="loggedIn" class="dropdown-item" routerLink="/add-sports-news">Add Sports</a>
                     <div class="dropdown-divider"></div>
                     <a *ngIf="loggedIn" class="dropdown-item" (click)="logout()" routerLink="/login">Log Out</a>
                 </div>
