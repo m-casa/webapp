@@ -15,6 +15,15 @@ app.use(cors());
 // News API Calls
 const NewsModel = require("./models/news.model");
 
+app.get("/get-news", async (req, res) => {
+    try {
+        const news = await NewsModel.find({ newsType: "regular" }).sort({createdOn: -1}).limit(3);
+        res.json({ list: news });
+    } catch (error) {
+        res.status(500);
+    }
+});
+
 app.get("/list-news", async (req, res) => {
     try {
         const news = await NewsModel.find({ newsType: "regular" });

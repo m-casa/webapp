@@ -13,7 +13,6 @@ export class NavBarComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        console.log("page refreshed");
         this.getLoginStatus();
       }
     });

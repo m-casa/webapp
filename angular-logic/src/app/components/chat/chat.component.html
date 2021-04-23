@@ -1,11 +1,11 @@
 <body>
-	<div class="container content">
+	<div class="container content footer">
 		<div class="row">
-			<div class="col-11">
+			<div class="col-8">
 				<div class="card">
 					<div class="card-header">Chat</div>
 					<div class="card-body height3">
-						<ul class="chat-list">
+						<ul class="chat-list scroll">
 							<li [ngClass]="{'in': message.self, 'out': !message.self}" *ngFor="let message of messages">
 								<div class="chat-body">
 									<div class="chat-message">
@@ -15,11 +15,11 @@
 							</li>
 						</ul>
 						<p *ngIf="loggedInUserName === ''">
-							<textarea class="form-control" [(ngModel)]="username" placeholder="Choose Nickname"></textarea><br>
+							<textarea class="form-control no-resize" [(ngModel)]="username" placeholder="Choose Nickname"></textarea><br>
 							<button class="btn btn-primary" (click)="loginUser()">Set Nickname</button>
 						</p>
 						<p *ngIf="loggedInUserName !== ''">
-							<textarea class="form-control" [(ngModel)]="message" placeholder="message"></textarea><br>
+							<textarea class="form-control no-resize" [(ngModel)]="message" placeholder="message"></textarea><br>
 							<button class="btn btn-primary" (click)="sendMessage()">Send</button>
 						</p>
 					</div>

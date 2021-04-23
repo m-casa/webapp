@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpInterceptorService } from './services/http-interceptor.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MustMatchDirective } from './directives/must-match.directive';
+import { LatestNewsComponent } from './components/news/latest-news/latest-news.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MustMatchDirective } from './directives/must-match.directive';
     HomePageComponent,
     FooterComponent,
     NavBarComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    LatestNewsComponent
   ],
   imports: [
     BrowserModule,

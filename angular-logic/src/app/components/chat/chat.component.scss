@@ -94,3 +94,17 @@
 .content{
     margin-top:40px;    
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.scroll {
+    height:150px;
+    overflow-y: scroll;
+  }
+
+  .no-resize{
+    resize: none;
+  }

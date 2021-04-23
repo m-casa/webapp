@@ -10,6 +10,10 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
+  getNews() {
+    return this.http.get('http://localhost:3000/get-news');
+  }
+
   addNews(news) {
     return this.http.post('http://localhost:3000/add-news', news);
   }
