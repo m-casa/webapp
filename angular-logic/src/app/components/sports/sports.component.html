@@ -1,20 +1,20 @@
 <header>
-    <h1 style="text-align: center;">Sports News Headquarters</h1>
+    <h1 style="text-align: center; color:black" >Sports News Headquarters</h1>
 </header>
 
 <body>
     <br>
     <div class="container">
-        <div class="row">
+        <div class="row mb-5">
             <div *ngFor="let news of sportsNewsList" class="card" style="width: 50%;">
                 <div class="col">
                     <div class="card-header">
-                        <img class="card-img-top" src="../../../assets/images/sports/{{news.img}}" alt="Image">
+                        <img class="card-img-top" src="{{news.img}}" alt="Image">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{news.title}}</h5>
                         <p class="card-text">{{news.description}}</p>
-                        <a href="{{news.url}}" class="btn btn-primary">Read more</a>
+                        <a href="//{{news.url}}" class="btn btn-primary">Read more</a>
                     </div>
                 </div>
             </div>

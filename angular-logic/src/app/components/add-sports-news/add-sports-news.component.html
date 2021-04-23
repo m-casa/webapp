@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label>Image</label>
-                        <input type="text" required class="form-control" placeholder="Enter image name (ex: image.jpeg)"
+                        <input type="text" required class="form-control" placeholder="Enter image url"
                             [(ngModel)]="newSportsNews.img" #sportsImg="ngModel" name="sportsImg">
                         <div *ngIf="sportsImg.errors && sportsImg.touched">
                             <p *ngIf="sportsImg.errors.required">Image name is required</p>
