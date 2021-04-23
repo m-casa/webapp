@@ -14,29 +14,7 @@
   clear: both;
 }
 
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #343d4b;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .container {
-  border-radius: 25px;
-  -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-  background:linear-gradient( to top right, rgba(63,81,181,1) 0%,
-          rgba(3,155,229 ,1) 40%);
   color: #ffffff;
   height: 170px;
 }
@@ -58,12 +36,9 @@ body {
   -webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
           transform: translateZ(0) scale(1.02) perspective(1000px);
   float: left;
+  width: 35%; 
+  margin-top: 0.5rem;
 }
-
-// .weather-side:hover {
-//   -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
-//           transform: scale(1.1) perspective(1500px) rotateY(10deg);
-// }
 
 .weather-gradient {
   position: absolute;
@@ -77,9 +52,12 @@ body {
 }
 
 .date-container {
+  display: inline-block;
   position: absolute;
   top: 25px;
   left: 25px;
+  width: 50%; 
+  height: 100px; 
 }
 
 .date-dayname {
@@ -104,9 +82,11 @@ body {
 }
 
 .weather-container {
-  margin-top: -21px;
+  margin-top: -25px;
   bottom: 25px;
   left: 25px;
+  margin-left: 50%; 
+  height: 100px;
 }
 
 .weather-icon.feather {
@@ -115,13 +95,16 @@ body {
 }
 
 .weather-temp {
-  margin: 0;
+  float: right;
+  margin-right: 35px;
   font-weight: 700;
   font-size: 4em;
 }
 
 .weather-desc {
   margin: 0;
+  float: right;
+  margin-right: 25px;
 }
 
 .info-side {
@@ -129,13 +112,18 @@ body {
   float: left;
   height: 70%;
   padding-top: 25px;
+  width: 60%;
+}
+
+.today-info-container {
+  width: 50%; 
+  height: 100px; 
+  float: left;
 }
 
 .today-info {
   padding: 15px;
   margin: 0 25px 25px 25px;
-/*  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
-  border-radius: 10px;
 }
 
 .today-info>div:not(:last-child) {
@@ -149,6 +137,11 @@ body {
 
 .today-info>div .value {
   float: right;
+}
+
+.week-container {
+  margin-left: 50%; 
+  height: 100px;
 }
 
 .week-list {
@@ -178,7 +171,7 @@ body {
   background: #fff;
   color: #222831;
   -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+          box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
 }
 
 .week-list>li.active {
@@ -211,3 +204,41 @@ body {
   padding: 25px 35px;
 }
 
+@media only screen and (max-width: 1180px) {
+
+  .week-list {
+    display: none;
+  }
+
+  .today-info {
+    padding: 15px;
+    margin: 0 20px 25px 25px;
+    width: 80%;
+  }
+
+  .weather-side {
+    width: 60%;
+
+  }
+
+  .info-side {
+    width: 40%;
+  }
+
+  .today-info-container {
+
+    width: 100%;
+    float: none;
+
+  }
+  .weather-temp {
+    float: right;
+    margin-right: 35px;
+  }
+  
+  .weather-desc {
+    float: right;
+    margin-right: 20px;
+  }
+
+}
