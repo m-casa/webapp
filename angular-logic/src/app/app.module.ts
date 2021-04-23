@@ -16,6 +16,7 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ChatComponent } from './components/chat/chat.component';
 import { EditNewsComponent } from './components/news/edit-news/edit-news.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -37,6 +38,7 @@ import { MustMatchDirective } from './directives/must-match.directive';
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
+    ChatComponent,
     EditNewsComponent,
     HomePageComponent,
     FooterComponent,

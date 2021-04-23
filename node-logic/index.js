@@ -2,6 +2,8 @@ require("./db");
 require("dotenv").config({ path: ".env" });
 const express = require("express");
 const cors = require("cors");
+const socketio = require("socket.io")
+const http = require("http");
 const axios = require("axios").default;
 const app = express();
 const jwt = require("jsonwebtoken");
@@ -149,6 +151,53 @@ app.post("/contact", async (req, res) => {
         res.status(500);
     }
 });
+
+//Chat
+
+// const server = http.createServer(app);
+// const io = socketio(server, {
+//     cors : {
+//         origin : "*"
+//     }
+// });
+
+
+// io.on("connection", (client)=>{
+
+//     client.on("login", (data)=>{
+//         connections[data.username] = client;
+
+//     });
+
+//     client.on("chat", (data)=>{
+
+//         // Send to All people who have joined the chat.
+//         client.broadcast.emit("message", data)
+//     })
+
+// })
+/* const connections = {};
+const server = http.createServer(app);
+const io = socketio(server, {
+    cors : {
+        origin : "*",
+        transports: ['websocket', 'polling']
+    }
+}); */
+
+/* io.on("connection", (client)=>{
+
+    client.on("login", (username)=>{
+        connections[username] = client;
+        io.emit("totalusers", { total : Object.keys(connections).length, names : Object.keys(connections) })
+    });
+
+    client.on("chat", (data)=>{
+        const { message, user } = data;
+        client.broadcast.emit("message", {message, user})
+        //client.broadcast.emit("message", data)
+    })
+}) */
 
 // Registration and Login
 const UserModel = require("./models/users.model");

@@ -6,6 +6,17 @@
 }
 
 .image-slider {
-    max-width: 400px;
+    position:absolute;
+    left: 10px;
+    max-width: 1000px;
+    height: 500px;
+}
+
+
+.chat {
+    position: relative;
+    bottom: 40px;
+    left:1000px;
+    max-width: 500px;
     height: 100px;
 }

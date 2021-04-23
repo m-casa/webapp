@@ -3,6 +3,7 @@
 </header>
 
 <body>
+	
 	<div class="container content ">
 		<div class="row">
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -10,28 +11,43 @@
 					<div class="card-header">Chat</div>
 					<div class="card-body height3">
 						<ul class="chat-list">
-							<li class="in">
+							<li [ngClass]="{'in': message.self, 'out': !message.self}" *ngFor="let message of messages">
 								<div class="chat-body">
 									<div class="chat-message">
-										<h5>Jon Snow</h5>
-										<p>Winter is Coming</p>
+										<p>{{message.user + ': ' + message.message}}</p>
 									</div>
 								</div>
 							</li>
-							<li class="out">
-								<div class="chat-body">
-									<div class="chat-message">
-										<h5>Daenerys</h5>
-										<p>I can change that</p>
-									</div>
-								</div>
-							</li>
+
 						</ul>
-						<textarea placeholder="message"></textarea> <br>
-						<button>Send</button>
+						<p *ngIf="loggedInUserName === ''">
+							<textarea [(ngModel)]="username" placeholder="Choose Nickname"></textarea><br>
+							<button (click)="loginUser()">Set Nickname</button>
+						</p>
+						<p *ngIf="loggedInUserName !== ''">
+							<textarea [(ngModel)]="message" placeholder="message"></textarea><br>
+							<button (click)="sendMessage()">Send</button>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+<!-- <body>
+
+
+<ul>
+    <li *ngFor="let message of messages">{{message.message}}</li>
+
+</ul>
+
+
+<p *ngIf="loggedInUserName === ''">
+    <input [(ngModel)]="username" placeholder="username" />
+    <button (click)="loginUser()">Login</button>
+</p>
+<p *ngIf="loggedInUserName !== ''">
+    <textarea [(ngModel)]="message" placeholder="message"></textarea><button (click)="sendMessage()">Send</button>
+</p>
+</body> -->
