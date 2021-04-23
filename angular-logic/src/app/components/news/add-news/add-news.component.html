@@ -1,42 +1,44 @@
-<form #newsForm="ngForm" (ngSubmit)="addNews()">
-    <div class="container">
-        <div class="row mt-1">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div>
-                    <h1 class="text-center">Add News</h1>
+<body>
+    <form #newsForm="ngForm" (ngSubmit)="addNews()">
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div>
+                        <h1 class="text-center">Add News</h1>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" placeholder="Enter title" [(ngModel)]="news.title"
+                            name="title" #title="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" placeholder="Enter description"
+                            [(ngModel)]="news.description" name="description" #description="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input type="text" class="form-control" placeholder="Enter URL" [(ngModel)]="news.url"
+                            name="url" #url="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label>URL to Image</label>
+                        <input type="text" class="form-control" placeholder="Enter URL to image" [(ngModel)]="news.img"
+                            name="img" #img="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label>Published At</label>
+                        <input type="text" class="form-control" placeholder="Enter publish date"
+                            [(ngModel)]="news.publishedAt" name="publishedAt" #publishedAt="ngModel">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary mr-1">Add</button>
+                        <button type="reset" class="btn btn-warning">Reset</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" placeholder="Enter title"
-                        [(ngModel)]="news.title" name="title" #title="ngModel">
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <input type="text" class="form-control" placeholder="Enter description"
-                        [(ngModel)]="news.description" name="description" #description="ngModel">
-                </div>
-                <div class="form-group">
-                    <label>URL</label>
-                    <input type="text" class="form-control" placeholder="Enter URL"
-                        [(ngModel)]="news.url" name="url" #url="ngModel">
-                </div>
-                <div class="form-group">
-                    <label>URL to Image</label>
-                    <input type="text" class="form-control" placeholder="Enter URL to image"
-                        [(ngModel)]="news.img" name="img" #img="ngModel">
-                </div>
-                <div class="form-group">
-                    <label>Published At</label>
-                    <input type="text" class="form-control" placeholder="Enter publish date"
-                        [(ngModel)]="news.publishedAt" name="publishedAt" #publishedAt="ngModel">
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary mr-1">Add</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                </div>
+                <div class="col-2"></div>
             </div>
-            <div class="col-2"></div>
         </div>
-    </div>
-</form>
+    </form>
+</body>

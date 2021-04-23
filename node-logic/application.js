@@ -15,7 +15,6 @@ const io = socketio(server, {
     }
 });
 
-
 io.on("connection", (client)=>{
 
     client.on("login", (data)=>{

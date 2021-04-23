@@ -1,45 +1,48 @@
-<div class="container">
-    <div class="row mt-1">
-        <div class="col-12">
-            <div>
-                <h1 class="text-center">News List</h1>
-            </div>
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-3"></div>
-                <div class="col-5">
-                    <form #searchForm="ngForm">
-                        <div class="input-group">
-                            <input type="search" class="form-control bg-light" placeholder="Search for News"
-                                [(ngModel)]="search.criteria" name="searchCriteria" #searchCriteria="ngModel">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-primary" (click)="searchFor()">Search</button>
-                            </div>
-                        </div>
-                    </form>
+<body>
+    <div class="container">
+        <div class="row mt-1">
+            <div class="col-12">
+                <div>
+                    <h1 class="text-center">News List</h1>
                 </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-3"></div>
+                    <div class="col-5">
+                        <form #searchForm="ngForm">
+                            <div class="input-group">
+                                <input type="search" class="form-control bg-light" placeholder="Search for News"
+                                    [(ngModel)]="search.criteria" name="searchCriteria" #searchCriteria="ngModel">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary" (click)="searchFor()">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-bordered mt-1">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Published At</th>
+                            <th scope="col">Edit/Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let news of list">
+                            <th scope="row">{{news.title}}</th>
+                            <td>{{news.description}}</td>
+                            <td>{{news.publishedAt}}</td>
+                            <td>
+                                <button type="submit" class="btn btn-warning mr-1"
+                                    (click)="editNews(news)">Edit</button>
+                                <button type="submit" class="btn btn-danger" (click)="deleteNews(news)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <table class="table table-bordered mt-1">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Published At</th>
-                        <th scope="col">Edit/Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let news of list">
-                        <th scope="row">{{news.title}}</th>
-                        <td>{{news.description}}</td>
-                        <td>{{news.publishedAt}}</td>
-                        <td>
-                            <button type="submit" class="btn btn-warning mr-1" (click)="editNews(news)">Edit</button>
-                            <button type="submit" class="btn btn-danger" (click)="deleteNews(news)">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-</div>
+</body>

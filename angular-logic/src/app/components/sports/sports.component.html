@@ -1,5 +1,5 @@
 <header>
-    <h1 style="text-align: center;">Sports News Headquarters</h1> 
+    <h1 style="text-align: center;">Sports News Headquarters</h1>
 </header>
 
 <body>
@@ -8,7 +8,9 @@
         <div class="row">
             <div *ngFor="let news of sportsNewsList" class="card" style="width: 50%;">
                 <div class="col">
-                    <img class="card-img-top" src="../../../assets/images/sports/{{news.img}}" alt="Image">
+                    <div class="card-header">
+                        <img class="card-img-top" src="../../../assets/images/sports/{{news.img}}" alt="Image">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">{{news.title}}</h5>
                         <p class="card-text">{{news.description}}</p>
@@ -16,10 +18,7 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
     <br>
-
-    
 </body>
