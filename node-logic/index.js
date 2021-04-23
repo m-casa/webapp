@@ -191,7 +191,6 @@ app.get("/whoami", async (req, res) => {
     try {
         const decoded = jwt.verify(token, process.env.APPLICATION_SECRET_KEY);
         const user = await UserModel.findOne({ email: decoded.email }, "-password")
-        console.log(token);
         res.json({ accessToken: token });
         return true;
     } catch (error) {

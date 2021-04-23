@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,32 +26,14 @@ export class UserService {
       });
   }
 
-  getLoginStatus() {
-    console.log("get login was called");
-
-    return this.http.get("http://localhost:3000/whoami");
-    // .subscribe((response: any) => {
-    //   console.log("THIS IS THE TOKEN: ");
-    //   console.log(response.accessToken);
-    //   if (window.localStorage.getItem("access-token") === response.accessToken) {
-    //     console.log("Getting true from who am i")
-    //     return true;
-    //   }
-    // }, (error) => {
-    //   console.log("In the error section")
-    //   console.log(error)
-    //   return false;
-    // });
-
+  getLoginStatus(): Observable<boolean> {
+    return this.http.get("http://localhost:3000/whoami").pipe(map((response: any) => {
+      if (response.accessToken === window.localStorage.getItem("access-token")) {
+        return true
+      }
+      else {
+        return false
+      }
+    }));
   }
-
-  // getLoginStatus(): Observable<boolean> {
-  //   return this.http.get<boolean>("http://localhost:3000/whoami").pipe(
-  //     (switchMap(response: any) => 
-  //       // do something with icons response
-  //       // based on some condition return true or false
-  //       return of(true)
-  //     )
-  //   )
-  // }
 }

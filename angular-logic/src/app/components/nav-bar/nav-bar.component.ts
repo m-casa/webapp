@@ -8,7 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  loggedIn: boolean = false;
+  loggedIn: boolean;
 
   constructor(private userService: UserService, private router: Router) {
     this.router.events.subscribe((event) => {
@@ -28,7 +28,9 @@ export class NavBarComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.userService.getLoginStatus();
+    this.userService.getLoginStatus().subscribe((response: any) => {
+      this.loggedIn = response;
+    });
   }
 
 }
