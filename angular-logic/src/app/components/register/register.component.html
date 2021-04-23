@@ -43,7 +43,7 @@
 							</div>
 							<div class="form-group row">
 								<div class="col-md-8">
-									<input type="text" class="form-control" placeholder="Password"
+									<input type="password" class="form-control" placeholder="Password"
 										[(ngModel)]="user.password" name="password" #password="ngModel"
 										[ngClass]="{ 'is-invalid': registerForm.submitted && password.invalid }" required minlength="6">
                                     <div *ngIf="registerForm.submitted && password.invalid" class="text-danger">
@@ -54,7 +54,7 @@
 							</div>
 							<div class="form-group row">
 								<div class="col-md-8">
-									<input type="text" class="form-control" placeholder="Confirm Password"
+									<input type="password" class="form-control" placeholder="Confirm Password"
 										[(ngModel)]="confirm.password" name="confirmPassword" #confirmPassword="ngModel"
 										[ngClass]="{ 'is-invalid': registerForm.submitted && confirmPassword.invalid }" required>
                                     <div *ngIf="registerForm.submitted && confirmPassword.invalid" class="text-danger">

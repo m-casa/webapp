@@ -186,17 +186,15 @@ app.get("/whoami", async (req, res) => {
     const token = req.headers.authorization || null;
     if(!token) {
         res.status(401).json({ message: "not authorzied" })
-        res.json({ status: false })
         return false;
     }
     try {
         const decoded = jwt.verify(token, process.env.APPLICATION_SECRET_KEY);
         const user = await UserModel.findOne({ email: decoded.email }, "-password")
-        res.json({ status: true });
+        res.json({ accessToken: token });
         return true;
     } catch (error) {
         res.status(401).json({ message: "not authorzied" })
-        res.json({ status: false })
         return false;
     }
 });

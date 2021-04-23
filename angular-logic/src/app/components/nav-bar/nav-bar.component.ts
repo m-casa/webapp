@@ -8,11 +8,12 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  loggedIn: false;
+  loggedIn: boolean;
 
   constructor(private userService: UserService, private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        console.log("page refreshed");
         this.getLoginStatus();
       }
     });
@@ -23,13 +24,13 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.loggedIn = false;
-    this.userService.loggedIn = false;
     window.localStorage.removeItem("access-token");
   }
 
   getLoginStatus() {
-    this.userService.getLoginStatus();
-    this.loggedIn = this.userService.loggedIn;
+    this.userService.getLoginStatus().subscribe((response: any) => {
+      this.loggedIn = response;
+    });
   }
 
 }
